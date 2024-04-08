@@ -1,0 +1,10 @@
+*{
+    background-color: black;
+    color: white;
+}
+.homepage_nav{
+    flex: 2;
+}
+.homepage_feeds{
+    flex: 8;
+}

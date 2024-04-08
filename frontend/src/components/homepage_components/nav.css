@@ -1,0 +1,30 @@
+.nav{
+    position: fixed;
+    justify-content: space-between;
+    z-index: 1;
+}
+.nav-logo{
+    width: 120px;
+    margin: 25px;
+}
+.nav-button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 5px 10px 5px 10px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+}
+.nav-button :hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.12);
+}
+.nav-button > span{
+    font-size: 20px;
+    font-weight:500 ;
+    margin-left: 5px;
+}
+.nav-more{
+    position: fixed;
+    bottom: 5px;
+}
