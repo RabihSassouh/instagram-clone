@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_picture',
     ];
 
     /**
@@ -37,11 +38,36 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+    
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+    public function followers()
+    {
+        return $this->hasMany(Follower::class, 'followed_id');
+    }
+    public function followering()
+    {
+        return $this->hasMany(Follower::class, 'follower_id');
     }
 }
