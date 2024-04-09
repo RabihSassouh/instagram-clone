@@ -11,10 +11,6 @@
     align-items: center;
     font-weight: bold;
 }
-.post-user span{
-    color: grey;
-    font-size: 15px;
-}
 .post-image img{
     width: 100%;
     border-radius: 5px;
@@ -29,4 +25,13 @@
 }
 .post-icon:hover{
     cursor: pointer;
+}
+
+.timestamp{
+    color: grey;
+    font-size: 15px;
+    margin-left: 5px;
+}
+.avatar{
+    margin-right: 10px;
 }

@@ -7,34 +7,35 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ShareIcon from "@mui/icons-material/Share";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
-function Posts() {
+function Posts({ posts }) {
+  const { user, postImage, likes, timestamp } = posts;
   return (
     <div className="post">
       <div className="post-header flex">
         <div className="post-user flex">
-          <Avatar>R</Avatar>
-          rabih_ . <span>12h</span>
+          <Avatar className="avatar">R</Avatar>
+          {user}
         </div>
         <MoreHorizIcon />
       </div>
       <div className="post-image">
-        <img
-          src="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-          alt=""
-        />
+        <img src={postImage} alt="" />
       </div>
       <div className="post-footer-container">
         <div className="post-footer flex">
           <div className="post-footer-Icons">
-            <FavoriteBorderIcon className="post-icon"/>
-            <ChatBubbleOutlineIcon className="post-icon"/>
-            <ShareIcon className="post-icon"/>
+            <FavoriteBorderIcon className="post-icon" />
+            <ChatBubbleOutlineIcon className="post-icon" />
+            <ShareIcon className="post-icon" />
           </div>
           <div className="post-footer-saveIcon">
-            <BookmarkBorderIcon className="post-icon"/>
+            <BookmarkBorderIcon className="post-icon" />
           </div>
         </div>
-        Liked by x
+        Liked by {likes}
+      </div>
+      <div className="timestamp">
+        <span>{timestamp} ago</span>
       </div>
     </div>
   );
