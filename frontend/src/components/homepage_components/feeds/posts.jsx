@@ -8,12 +8,12 @@ import ShareIcon from "@mui/icons-material/Share";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 function Posts({ posts }) {
-  const { user, postImage, likes, timestamp } = posts;
+  const { user, postImage, likes, timestamp, caption } = posts;
   return (
     <div className="post">
       <div className="post-header flex">
         <div className="post-user flex">
-          <Avatar className="avatar">R</Avatar>
+          <Avatar className="avatar">{user.charAt(0).toUpperCase()}</Avatar>
           {user}
         </div>
         <MoreHorizIcon />
@@ -32,10 +32,12 @@ function Posts({ posts }) {
             <BookmarkBorderIcon className="post-icon" />
           </div>
         </div>
-        Liked by {likes}
-      </div>
-      <div className="timestamp">
-        <span>{timestamp} ago</span>
+        <div>Liked by {likes} people</div>
+        <div>{caption}</div>
+        <div>comments</div>
+        <div className="timestamp">
+          <span>{timestamp} ago</span>
+        </div>
       </div>
     </div>
   );

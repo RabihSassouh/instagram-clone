@@ -1,0 +1,33 @@
+.follow{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.follow-header{
+    color: grey;
+    font-weight: 500;
+}
+.relation{
+    color: grey;
+    font-size: 12px;
+}
+.follow-user{
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.user-name{
+    font-weight: 600;
+    font-size: 15px;
+}
+.follow-button{
+    color: #0095f6;
+    font-weight: 600;
+    background: 0;
+    border: 0;
+}
+.follow-button :hover{
+    color: white;
+    cursor: pointer;
+}
+.avatar{
+    margin-right: 3px;
+}

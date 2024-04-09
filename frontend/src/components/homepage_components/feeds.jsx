@@ -9,6 +9,7 @@ const Feeds = () => {
     postImage: "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg",
     likes: 12,
     timestamp:"5h",
+    caption: "First post!"
 }
 ])
   return (
