@@ -1,0 +1,32 @@
+.post{
+    width: 550px;
+    margin: 40px;
+}
+.post-header{
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.post-user{
+    align-items: center;
+    font-weight: bold;
+}
+.post-user span{
+    color: grey;
+    font-size: 15px;
+}
+.post-image img{
+    width: 100%;
+    border-radius: 5px;
+    border: 0.5px solid rgba(125, 125, 125,0.5);
+}
+.post-footer{
+    align-items: center;
+    justify-content: space-between;
+}
+.post-icon{
+    margin: 10px;
+}
+.post-icon:hover{
+    cursor: pointer;
+}

@@ -1,11 +1,16 @@
 import React from 'react'
 import Follow from './follow';
 import './feeds.css';
+import Posts from './feeds/posts';
 const Feeds = () => {
   return (
     <div className='feeds flex'>
-    <div className='feeds_container'>feeds</div>
-    <div className='follow_container'><Follow/></div>
+    <div className='feeds-container'>
+      <div className="feeds-posts">
+        <Posts/>
+      </div>
+    </div>
+    <div className='follow-container'><Follow/></div>
     </div>
   )
 }
