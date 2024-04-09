@@ -1,0 +1,117 @@
+.signup-container{
+    text-align: center;
+    height: 120vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(250, 250,250);
+}
+.contianer1{
+    width: 350px;
+    height: 700px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: white;
+}
+.container1-text{
+    color: #8e8e8e;
+    font-weight: 600;
+    width: 80%;
+}
+.instagram-icon{
+ width: 175px;
+ height: 100px;
+}
+.facebook_logo{
+    width: 15px;
+    height: 15px;
+
+}
+.google_play-logo{
+    width: 140px;
+    height: 110px;
+    margin-right: 5px;
+}
+.microsoft_icon-logo{
+    width: 100px;
+    height: 95px;
+    margin-left: 5px;
+}
+.container2{
+    width: 350px;
+    height: 100px;
+    border: 1px solid rgb(219, 219, 219);
+    text-align: center;
+    margin: 10px 0;
+    background-color: white;
+    font-size: 14px;
+}
+.login{
+    color: rgb(0, 149, 246);
+    cursor: pointer;
+}
+input{
+    background-color: rgb(250,250,250);
+    line-height: 20px;
+    font-size: 13px;
+    padding: 10px 5px 10px 5px;
+    width: 260px;
+    height: 35px;
+    margin: 10px;
+    border: 1px solid rgb(219, 219, 219);
+}
+.signup-button{
+    border-radius: 5px;
+    background-color: rgb(0, 149, 246);
+    color: white;
+    padding: 5px 9px;
+    border: none;
+    width: 270px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+}
+.lines-or{
+    color: #8e8e8e;
+    margin: 10px 0;
+    height: 5px;
+}
+.or{
+    font-size: 12px;
+    font-weight: bold;
+}
+.line1{
+    width: 100px;
+    height: 1px;
+    background-color: #dbdbdb;
+    margin-right: 15px;
+}
+.line2{
+    width: 100px;
+    height: 1px;
+    background-color: #dbdbdb;
+    margin-left: 15px;
+}
+.fb-login{
+    text-align: center;
+    gap: 10px;
+    margin: 25px 0 20px 0;
+    cursor: pointer;
+}
+.fb-link{
+    color: #385185;
+    font-size: 15px;
+}
+.terms{
+    color: #385185;
+    font-size: 12px;
+    cursor: pointer;
+}
+.container3{
+    height: 30px;
+}
+.container3 p{
+    font-size: 13px;
+}
+/* .container4{
+    height: 0px;
+} */
