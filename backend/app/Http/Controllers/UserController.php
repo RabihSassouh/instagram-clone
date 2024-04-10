@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 
 use JWTAuth;
 // use Tymon\
-use App\Models\User;
 // use Faker\Core\File;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\File;
 use Illuminate\Validation\ValidationException;
+use App\Models\User;
 
 class UserController extends Controller
 {
