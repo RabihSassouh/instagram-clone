@@ -17,7 +17,7 @@
 }
 .nav-button :hover{
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(78, 66, 66, 0.12);
 }
 .nav-button > span{
     font-size: 20px;
@@ -27,4 +27,25 @@
 .nav-more{
     position: fixed;
     bottom: 5px;
+}
+.logout-button{
+    font-size: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.21);
+    padding: 10px;
+    border: 0;
+}
+.logout-avatar{
+    height: 15px;
+    width: 15px;
+}
+.nav-logout{
+    
+    position: fixed;
+    height: 20px;
+    bottom: 100px;
+}
+.logout-button:hover{
+    cursor: pointer;
 }

@@ -6,13 +6,14 @@ import microsoft_icon from "../assets/imgs/Login/microsoft_icon.png";
 import "../styles/commons/utilities.css";
 import "../styles/signup.css";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const Signup = ({ onToggle }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+    const navigate=useNavigate();
   const handleSignup= async ()=>{
     
     try{
@@ -22,7 +23,8 @@ const Signup = ({ onToggle }) => {
             username,
             password,
         });
-        console.log(response.data);
+        window.localStorage.setItem("token", response.data.authorisation.token);
+        navigate("/homepage");
     } catch (error){
         console.error("error",error);
     }

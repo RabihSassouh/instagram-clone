@@ -8,8 +8,10 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import MenuIcon from "@mui/icons-material/Menu";
+import {Avatar} from "@mui/material";
 
-const Nav = () => {
+const Nav = ({handleLogout}) => {
+  
   return (
     <div className="nav flex column">
       <img className="nav-logo" src={instagram_logo_homepage} alt="" />
@@ -43,6 +45,12 @@ const Nav = () => {
           <AddBoxIcon />
           <span>Create</span>
         </button>
+        <div className="nav-logout">
+        <button className="nav-button" onClick={handleLogout}>
+          <Avatar className="logout-avatar">R</Avatar>
+          <span className="logout-button">Log out</span>
+        </button>
+        </div>
       </div>
       <div className="nav-more">
         <button className="nav-button">
