@@ -11,5 +11,8 @@ Route::controller(UserController::class)->group(function () {
     Route::post('refresh', 'refresh');
     Route::get('getUser','getUser');
     Route::post('updateProfile','updateProfile');
+    Route::post('createPost','createPost');
     
 });
+
+Route::post('/user/{userId}/follow', [UserController::class, 'follow']);

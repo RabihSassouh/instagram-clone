@@ -122,7 +122,9 @@ class UserController extends Controller
         $user=User::where("email", $Authuser->email)->first();
         $user->update([
             'name'=>$request->name,
-            'profile_picture'=>$request->profile_picture
+            // 'username'=>$request->username,
+            // 'email'=>$request->email,
+            // 'profile_picture'=>$request->profile_picture
         ]);
  
         return response()->json([
@@ -130,4 +132,46 @@ class UserController extends Controller
 
         ]);
      }
+
+     public function createPost(Request $request)
+    {
+        $request->validate([
+            'caption' => 'string',
+            'image' => 'required|image',
+        ]);
+        
+        $Authuser= Auth::user();
+        $user=User::where("email", $Authuser->email)->first();
+       
+        $imagePath = $request->file('image')->store('images');
+
+        $post = $user->posts()->create([
+            'caption' => $request->caption,
+            'image' => $imagePath,
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Post created successfully',
+            'post' => $post,
+        ]);
+    }
+
+    public function follow(Request $request, $userId)
+    {
+        $user = User::find($userId);
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        $currentUser = $request->user();
+
+        if ($currentUser->id == $userId) {
+            return response()->json(['error' => 'You cannot follow yourself'], 400);
+        }
+
+        $currentUser->following()->attach($userId);
+
+        return response()->json(['message' => 'You are now following ' . $user->name]);
+    }
 }
