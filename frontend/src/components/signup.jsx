@@ -5,6 +5,7 @@ import google_play from "../assets/imgs/Login/google_play.png";
 import microsoft_icon from "../assets/imgs/Login/microsoft_icon.png";
 import "../styles/commons/utilities.css";
 import "../styles/signup.css";
+import axios from "axios";
 
 const Signup = ({ onToggle }) => {
   const [name, setName] = useState("");
@@ -12,6 +13,20 @@ const Signup = ({ onToggle }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSignup= async ()=>{
+    
+    try{
+        const response= await axios.post("http://127.0.0.1:8000/api/signup",{
+            email,
+            name,
+            username,
+            password,
+        });
+        console.log(response.data);
+    } catch (error){
+        console.error("error",error);
+    }
+  }
   return (
     <div className="signup-container flex center column full-width">
       <div className="contianer1">
@@ -38,7 +53,7 @@ const Signup = ({ onToggle }) => {
           <input
             type="text"
             placeholder="Phone Number or Email"
-            onChange={(e) => setEmail(e.target)}
+            onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
         </div>
@@ -46,7 +61,7 @@ const Signup = ({ onToggle }) => {
           <input
             type="text"
             placeholder="Full Name"
-            onChange={(e) => setName(e.target)}
+            onChange={(e) => setName(e.target.value)}
             value={name}
           />
         </div>
@@ -54,7 +69,7 @@ const Signup = ({ onToggle }) => {
           <input
             type="text"
             placeholder="Username"
-            onChange={(e) => setUsername(e.target)}
+            onChange={(e) => setUsername(e.target.value)}
             value={username}
           />
         </div>
@@ -62,7 +77,7 @@ const Signup = ({ onToggle }) => {
           <input
             type="password"
             placeholder="Password"
-            onChange={(e) => setPassword(e.target)}
+            onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
         </div>
@@ -73,7 +88,7 @@ const Signup = ({ onToggle }) => {
           </p>
         </div>
         <div className="contianer1-signup">
-          <button className="signup-button">Sign up</button>
+          <button className="signup-button" onClick={handleSignup}>Sign up</button>
         </div>
       </div>
       <div className="container2 flex center">

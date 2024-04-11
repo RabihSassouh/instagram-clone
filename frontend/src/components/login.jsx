@@ -5,11 +5,25 @@ import google_play from "../assets/imgs/Login/google_play.png";
 import microsoft_icon from "../assets/imgs/Login/microsoft_icon.png";
 import "../styles/commons/utilities.css";
 import "../styles/login.css";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const Login = ({ onToggle }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const navigate=useNavigate();
+  const handleLogin= async ()=>{
+    
+    try{
+        const response= await axios.post("http://127.0.0.1:8000/api/login",{
+            email,
+            password,
+        });
+        navigate("/homepage");
+    } catch (error){
+        console.error("error",error);
+    }
+  }
   return (
     <div className="login-container flex center column full-width">
       <div className="contianer1">
@@ -33,7 +47,7 @@ const Login = ({ onToggle }) => {
           />
         </div>
         <div className="contianer1-login">
-          <button className="login-button">Login</button>
+          <button className="login-button" onClick={handleLogin}>Login</button>
         </div>
         <div className="lines-or flex center full-width">
           <div className="line1"></div>
