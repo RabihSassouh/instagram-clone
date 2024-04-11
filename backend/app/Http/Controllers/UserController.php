@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
 
+use function Laravel\Prompts\password;
+
 class UserController extends Controller
 {
     // public function __construct()
@@ -103,5 +105,29 @@ class UserController extends Controller
                  'type' => 'bearer',
              ]
          ]);
+     }
+     public function getUser()
+     {
+        $user= Auth::user();
+        return response()->json([
+            'user'=>$user,
+            // 'username' => $user->username,
+            // 'password' => $user->password,
+        ]);
+     }
+
+     public function updateProfile(Request $request)
+     {
+        $Authuser= Auth::user();
+        $user=User::where("email", $Authuser->email)->first();
+        $user->update([
+            'name'=>$request->name,
+            'profile_picture'=>$request->profile_picture
+        ]);
+ 
+        return response()->json([
+            'user'=>$user
+
+        ]);
      }
 }
