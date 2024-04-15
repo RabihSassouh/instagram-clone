@@ -72,7 +72,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(Follower::class, 'followed_id');
     }
-    public function followering()
+    public function following()
     {
         return $this->hasMany(Follower::class, 'follower_id');
     }

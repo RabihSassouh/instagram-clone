@@ -8,14 +8,14 @@ import ShareIcon from "@mui/icons-material/Share";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 function Posts({ posts }) {
-  const { user, postImage, likes, timestamp, caption } = posts;
+  const { username, postImage, likes, timestamp, caption } = posts;
   return (
     <div className="post">
       <div className="post-header flex">
-        <div className="post-user flex">
-          <Avatar className="avatar">{user.charAt(0).toUpperCase()}</Avatar>
-          {user}
-        </div>
+        {/* <div className="post-user flex">
+          <Avatar className="avatar">{username.charAt(0).toUpperCase()}</Avatar>
+          {username}
+        </div> */}
         <MoreHorizIcon />
       </div>
       <div className="post-image">
